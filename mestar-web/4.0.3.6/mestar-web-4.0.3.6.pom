@@ -1,0 +1,426 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.epichust</groupId>
+		<artifactId>mestar</artifactId>
+		<version>4.0.3.6</version>
+	</parent>
+  
+	<groupId>com.epichust.mestar</groupId>
+	<artifactId>mestar-web</artifactId>
+	<packaging>war</packaging>
+
+	<name>mestar-web</name>
+	<url>http://www.epichust.com/project/mestar/mestar-web</url>
+	<description>Mestar平台 Web模块</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!--the path of checkstyle rule file-->
+		<checkStyle.checks.FilePath>../config/epichust-checkstyle.xml</checkStyle.checks.FilePath>
+		
+	    <!-- 定义日期格式 -->
+	    <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+	    <!-- 对外声明变量，使该变量可在resources filtering中获取 -->
+	    <build.timestamp>${maven.build.timestamp}</build.timestamp>
+		
+		<!-- JBOSS Deployment Settings -->
+		<deploy.jboss.host>192.168.6.96</deploy.jboss.host>
+		<deploy.jboss.port>9999</deploy.jboss.port>
+		<deploy.jboss.user>admin</deploy.jboss.user>
+		<deploy.jboss.pswd>epichust123!</deploy.jboss.pswd>
+		<deploy.jboss.name>mestar</deploy.jboss.name>
+		<deploy.jboss.skip>false</deploy.jboss.skip>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		
+		<!-- JavaEE 6 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-sys-account</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-sys-management</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-sys-monitor</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-sys-external</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-sys-exception</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-base-demos</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-base-quartz</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-base-report</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-base-script</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-base-client</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-base-workflow</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-mes</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-base-etl</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-base-rule</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-taglib</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-quick-develop</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+  			<artifactId>above-context</artifactId>
+			<version>4.0.3.6</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.epichust.mestar</groupId>
+  			<artifactId>above-report</artifactId>
+			<version>3.5.8-SNAPSHOT</version>
+		</dependency> -->
+		
+
+		<!-- <dependency>
+			<groupId>com.epichust.taglib</groupId>
+			<artifactId>taglib-web</artifactId>
+			<version>${taglib.web.version}</version>
+			<type>war</type>
+			<optional>true</optional>
+		</dependency> -->
+
+	</dependencies>
+
+	<build>
+		<finalName>mestar-web</finalName>
+		
+		<filters>
+			<filter>src/main/resources/application.properties</filter>
+		</filters>
+		
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>version.properties</include>
+					<include>content/index-version.jsp</include>
+					<include>content/index-onlineusers.jsp</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>	
+					<exclude>version.properties</exclude>
+					<exclude>content/index-version.jsp</exclude>
+					<exclude>content/index-onlineusers.jsp</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<!-- 是否启用webapp架构缓存(默认false) -->
+					<useCache>false</useCache>
+					 <!-- 打包后不包括pom的描述文件 -->
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+					<!-- <overlays>
+						<overlay />
+						<overlay>
+							<groupId>com.epichust.taglib</groupId>
+							<artifactId>taglib-web</artifactId>
+						</overlay>
+					</overlays> -->
+					<!-- 过滤依赖War中不需要的目录 -->
+					<warSourceExcludes>assets/**</warSourceExcludes> 
+					<!-- 过滤依赖War中不需要的文件 -->
+					<dependentWarExcludes>						WEB-INF/web.xml,**/*.jar,**/content/index.jsp,**/content/index2.jsp,**/content/index3.jsp,**/content/login.jsp,**/content/login_backup.jsp,**/applicationContext.xml,**/application.properties,**/struts.xml,**/quartz.properties
+					</dependentWarExcludes>
+				</configuration>
+			</plugin>
+			<!-- <plugin>
+				<groupId>org.appfuse.plugins</groupId>
+				<artifactId>maven-warpath-plugin</artifactId>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<goals>
+							<goal>add-classes</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
+		
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+		        <groupId>org.jboss.as.plugins</groupId>
+		        <artifactId>jboss-as-maven-plugin</artifactId>
+		        <configuration>
+		            <hostname>${deploy.jboss.host}</hostname>
+		            <port>${deploy.jboss.port}</port>
+		            <username>${deploy.jboss.user}</username>
+		            <password>${deploy.jboss.pswd}</password>
+		            <!-- 
+		            <name>${deploy.jboss.name}</name>
+		            <filename>${project.build.finalName}.war</filename>
+		            <skip>${deploy.jboss.skip}</skip>
+		             -->
+		        </configuration>
+		        <!-- 
+		        <executions>
+		            <execution>
+		                <id>deploy-jar</id>
+		                <phase>install</phase>
+		                <goals>
+		                    <goal>deploy</goal>
+		                </goals>
+		            </execution>
+		        </executions>
+		         -->
+		    </plugin>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- 
+            <plugin>
+            	<artifactId>maven-dependency-plugin</artifactId>
+            	<configuration>
+            		<includeGroupIds>com.epichust.mestar</includeGroupIds>
+            		 <outputDirectory>${MESTAR_HOME}\lib</outputDirectory>
+            	</configuration>
+            	<executions>
+            		<execution>
+            			<id>copy-mestar-dependency</id>
+            			<phase>prepare-package</phase>
+            			<goals>
+            				<goal>copy-dependencies</goal>
+            			</goals>
+            			<configuration>
+            				<includeGroupIds>com.epichust.mestar</includeGroupIds>
+            				<outputDirectory>${MESTAR_HOME}\lib</outputDirectory>
+            			</configuration>
+            		</execution>
+            	</executions>
+            </plugin>
+             -->
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.appfuse.plugins
+										</groupId>
+										<artifactId>
+											maven-warpath-plugin
+										</artifactId>
+										<versionRange>
+											[2.1.0,)
+										</versionRange>
+										<goals>
+											<goal>add-classes</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-dependency-plugin
+										</artifactId>
+										<versionRange>
+											[2.8,)
+										</versionRange>
+										<goals>
+											<goal>
+												copy-dependencies
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<profiles>
+		<profile>
+			<id>hudson_bulid</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>false</filtering>
+						<excludes>
+							<exclude>version.properties</exclude>
+						</excludes>
+					</resource>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+						<includes>
+							<include>version.properties</include>
+						</includes>
+					</resource>
+				</resources>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<!-- 是否启用webapp架构缓存(默认false) -->
+							<useCache>false</useCache>
+							 <!-- 打包后不包括pom的描述文件 -->
+							<archive>
+								<addMavenDescriptor>false</addMavenDescriptor>
+							</archive>
+						<!-- 	<overlays>
+								<overlay>
+									<groupId>com.epichust.taglib</groupId>
+									<artifactId>taglib-web</artifactId>
+								</overlay>
+							</overlays> -->
+							<!-- 过滤依赖War中不需要的文件 -->
+							<dependentWarExcludes>
+								WEB-INF/web.xml,**/*.jar,**/content/index.jsp,**/content/index2.jsp,**/content/index3.jsp,**/content/login.jsp,**/content/login_backup.jsp,**/applicationContext.xml,**/application.properties,**/struts.xml,**/quartz.properties
+							</dependentWarExcludes>
+							<!--  <warSourceExcludes>**/*.jar</warSourceExcludes>-->
+							<!-- 打War包时排除文件（War包中不存在排除的文件）
+							<packagingExcludes>**/*.jar</packagingExcludes>
+							-->
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.appfuse.plugins</groupId>
+						<artifactId>maven-warpath-plugin</artifactId>
+						<version>3.0.0</version>
+						<extensions>true</extensions>
+						<executions>
+							<execution>
+								<goals>
+									<goal>add-classes</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+		                <groupId>org.apache.maven.plugins</groupId>
+		                <artifactId>maven-source-plugin</artifactId>
+		                <executions>
+		                    <execution>
+		                        <id>attach-sources</id>
+		                        <phase>deploy</phase>
+		                        <goals>
+		                            <goal>jar-no-fork</goal>
+		                        </goals>
+		                    </execution>
+		                </executions>
+		            </plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
