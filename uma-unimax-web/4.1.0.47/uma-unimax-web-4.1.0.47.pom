@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.epichust</groupId>
+		<artifactId>UniMax-A</artifactId>
+		<version>4.1.0.47</version>
+	</parent>
+	<groupId>com.epichust.UniMax-A</groupId>
+	<artifactId>uma-unimax-web</artifactId>
+	<packaging>war</packaging>
+	<name>uma-unimax-web</name>
+
+	<description>Unimax-A Product</description>
+	
+	<properties>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+		<build.timestamp>${maven.build.timestamp}</build.timestamp>
+	</properties>
+
+	<dependencies>
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-plan-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<dependency>
+	  		<groupId>com.epichust.UniMax-A</groupId>
+	  		<artifactId>uma-plan</artifactId>
+	  		<version>4.1.0.47</version>
+	  	</dependency>
+
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-materiel-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-materiel</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-quality-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-quality</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-execute-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-execute</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-bpp-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-bpp</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-equipment-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-equipment</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-mds</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-mds-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-tool-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-tool</artifactId>
+			<version>4.1.0.35-SNAPSHOT</version>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-wip</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-warehouse-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-warehouse</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-document-web</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-document</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+		    <artifactId>uma-processor</artifactId>
+		    <version>4.0.0-SNAPSHOT</version>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.Unimax-A</groupId>
+			<artifactId>uma-client</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.mestar</groupId>
+			<artifactId>mestar-web</artifactId>
+			<version>${mestar.version}</version>
+			<type>war</type>
+		</dependency>
+	<!-- 	<dependency>
+			<groupId>com.epichust.taglib</groupId>
+			<artifactId>taglib-core</artifactId>
+			<version>${taglib.core.version}</version>
+		</dependency> -->
+		<!-- <dependency>
+			<groupId>com.epichust.taglib</groupId>
+			<artifactId>taglib-web</artifactId>
+			<version>${taglib.web.version}</version>
+			<type>war</type>
+		</dependency> -->
+		<!-- <dependency>
+			<groupId>com.epichust.taglib</groupId>
+			<artifactId>taglib-mobile</artifactId>
+			<version>${taglib-mobile.version}</version>
+		</dependency> -->
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-site</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-resource</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-barcode</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+		<dependency>
+			<groupId>com.epichust.UniMax-A</groupId>
+			<artifactId>uma-wms</artifactId>
+			<version>4.1.0.47</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>uma-unimax-web</finalName>
+		
+		<!--  
+		<testSourceDirectory>src/test/java/bpp</testSourceDirectory>
+		-->
+		
+		<filters>
+			<filter>src/main/resources/application.properties</filter>
+		</filters>
+		
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>version.properties</include>
+					<include>content/index-version.jsp</include>
+					<include>content/index-onlineusers.jsp</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>	
+					<exclude>version.properties</exclude>
+					<exclude>content/index-version.jsp</exclude>
+					<exclude>content/index-onlineusers.jsp</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	
+
+		<plugins>
+		<!--
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						 <phase>deploy</phase>
+						 <goals>
+							<goal>jar-no-fork</goal>
+						 </goals>
+					</execution>
+				</executions>
+		</plugin>
+		-->
+			<!-- 
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>com.epichust.mestar.bpp.core.service.VersionMessage</mainClass>
+							<arguments>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			-->
+	
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<workDirectory>${project.build.directory}/war</workDirectory>
+					<!-- <webappDirectory>src/main/webapp</webappDirectory> 是否启用webapp架构缓存(默认false) -->
+					<useCache>true</useCache>
+					<!-- 打包后不包括pom的描述文件 -->
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+					<overlays>
+						<overlay />
+						<!-- 
+						<overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-document-web</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-warehouse-web</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-mds-web</artifactId>
+						</overlay>
+						 -->
+						<!-- <overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-plan-web</artifactId>
+						</overlay> -->
+						<!-- <overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-bpp-web</artifactId>
+						</overlay> -->
+						<!-- <overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-materiel-web</artifactId>
+						</overlay> -->
+						<!-- <overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-quality-web</artifactId>
+						</overlay> -->
+						<!-- <overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-execute-web</artifactId>
+						</overlay> -->
+						<!-- <overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-equipment-web</artifactId>
+						</overlay> -->
+						<!-- <overlay>
+							<groupId>com.epichust.UniMax-A</groupId>
+							<artifactId>uma-tool-web</artifactId>
+						</overlay> -->
+						<!-- <overlay>
+							<groupId>com.epichust.taglib</groupId>
+							<artifactId>taglib-web</artifactId>
+							<excludes>
+								<exclude>index.jsp</exclude>
+								<exclude>meta.jsp</exclude>
+								<exclude>taglib.jsp</exclude>
+								<exclude>WEB-INF/lib/*</exclude>
+							</excludes>
+						</overlay> -->
+						<overlay>
+							<groupId>com.epichust.mestar</groupId>
+							<artifactId>mestar-web</artifactId>
+						</overlay>
+						
+						<!-- <overlay> empty groupId/artifactId is detected as the current 
+							build -->
+						<!-- 代表当前WAR项目，默认情况下当前WAR项目是先被拷贝的，如果要控制其顺序(在下面的先拷贝)，则使用空的overlay -->
+						<!-- any other overlay will be applied after the current build since 
+							they have not been configured in the overlays element </overlay> -->
+					</overlays>
+					<!-- 过滤依赖War中不需要的目录 -->
+					<warSourceExcludes>assets/**</warSourceExcludes> 
+					<!-- 过滤依赖War中不需要的文件 -->
+					<dependentWarExcludes>${dependent.war.excludes}</dependentWarExcludes>
+					
+					<!-- <warSourceExcludes>**/*.jar</warSourceExcludes> -->
+
+					<!-- 打War包时排除文件（War包中不存在排除的文件） 
+					<packagingExcludes>**/*.jar</packagingExcludes> 
+					 -->
+				</configuration>
+			</plugin>
+			
+			<!-- 添加war包传递依赖 -->
+			<plugin>
+				<groupId>org.appfuse.plugins</groupId>
+				<artifactId>maven-warpath-plugin</artifactId>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<goals>
+							<goal>add-classes</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<warpathExcludes>**/*.jar</warpathExcludes>
+				</configuration>
+			</plugin>
+			
+			<!-- 
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>add-test-source</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${basedir}/src/test/java/materiel</source>
+								<source>${basedir}/src/test/java/execute</source>
+								<source>${basedir}/src/test/java/pexecute</source>
+								<source>${basedir}/src/test/java/plan</source>
+								<source>${basedir}/src/test/java/pplan</source>
+								<source>${basedir}/src/test/java/quality</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		    -->
+		    
+			<!-- JBoss Deployment Plugin (globel-jboss-as:{deploy,redeploy,undeploy...}) -->
+			<plugin>
+		        <groupId>org.jboss.as.plugins</groupId>
+		        <artifactId>jboss-as-maven-plugin</artifactId>
+		        <version>7.1.1.Final</version>
+		        <configuration>
+		            <hostname>${deploy.jboss.host}</hostname>
+		            <port>${deploy.jboss.port}</port>
+		            <username>${deploy.jboss.user}</username>
+		            <password>${deploy.jboss.pswd}</password>
+		            <skip>false</skip>
+		        </configuration>
+		    </plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											build-helper-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.7,)
+										</versionRange>
+										<goals>
+											<goal>add-test-source</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
